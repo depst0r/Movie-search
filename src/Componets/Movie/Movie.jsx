@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { fetchData } from '../../Redux/Actions/action'
 import { useDispatch, useSelector } from 'react-redux'
 
+// import module from './movie.module.scss'
+
 export const Movie = () => {
 
    const dispatch = useDispatch()
