@@ -9,8 +9,8 @@ export const movieReducer = (state = initialState, action) => {
         case 'getMovie' :
             return {
                 ...state,
-                movie: action.data,
-                loading: action.data.response,
+                movie: action.data.Search,
+                loading: action.response,
                 errorMessage: null
             }
         case 'getMoveFailure' :
