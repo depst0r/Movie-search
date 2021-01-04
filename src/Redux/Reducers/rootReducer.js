@@ -1,3 +1,5 @@
+import { SEARCH_MOVIES } from '../Actions/actionType'
+
 const initialState = {
     movie: [],
 }
@@ -8,6 +10,13 @@ export const movieReducer = (state = initialState, action) => {
             return {
                 ...state,
                 movie: action.data.Search
+            }
+        case SEARCH_MOVIES :
+            return {
+                movie: [
+                    ...state,
+                    action.payload
+                ]
             }
         default:
             return state

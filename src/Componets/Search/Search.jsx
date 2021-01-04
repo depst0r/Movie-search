@@ -1,18 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import style from './search.module.scss'
-
+import { useSelector, useDispatch } from 'react-redux'
+ 
 export const Search = () => {
 
-    const [value, setValue] = useState('')
+    const [searchValue, setSearchValue] = useState('')
+    const selector = useSelector(state => state.movieReducer)
 
-
-
-    const searchInput = () => {
-
-    }
+    console.log(selector.movie.map(res => res.Title))
 
     const findFilm = () => {
-        console.log(value)
+        console.log(searchValue)
     }
 
     return<>
@@ -20,8 +18,8 @@ export const Search = () => {
             <input 
             className={style.search} 
             type="text"
-            value={value}
-            onChange={e => setValue(e.target.value)}
+            value={searchValue}
+            onChange={e => setSearchValue(e.target.value)}
             />
             <button
             onClick={findFilm}
