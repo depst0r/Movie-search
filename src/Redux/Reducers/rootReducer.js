@@ -1,7 +1,5 @@
 const initialState = {
     movie: [],
-    loading: true,
-    errorMessage: null
 }
 
 export const movieReducer = (state = initialState, action) => {
@@ -9,15 +7,7 @@ export const movieReducer = (state = initialState, action) => {
         case 'getMovie' :
             return {
                 ...state,
-                movie: action.data.Search,
-                loading: action.response,
-                errorMessage: null
-            }
-        case 'getMoveFailure' :
-            return {
-                ...state,
-                loading: false,
-                errorMessage: action.payload
+                movie: action.data.Search
             }
         default:
             return state

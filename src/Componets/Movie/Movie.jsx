@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { fetchData } from '../../Redux/Actions/action'
 import { useDispatch, useSelector } from 'react-redux'
 
-// import module from './movie.module.scss'
+import style from './movie.module.scss'
 
 export const Movie = () => {
 
@@ -17,13 +17,15 @@ export const Movie = () => {
 
 
     return<>
-        <div className="movies__container">
-        {selector.movie.map(res => (
-            <>
-        <span className='movie__title'>{res.Title}</span>
+        <div className={style.movies}>
+        {selector.movie.map((res, i) => (
+        <div key={i}>
+        <div>
+        <h4>{res.Title}</h4>
+        </div>
         <img className="movie__poster" src={res.Poster} alt="poster"/>
         <div className="movies ditails">{res.Year}</div>
-        </>
+        </div>
     ))}
         </div>
     </>
